@@ -5,19 +5,24 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            Contact contact = new Contact()
+            Console.WriteLine("Welcome to Address Book Program");
+            AddressBookMain create = new AddressBookMain();
+            bool flag = true;
+            while (flag)
             {
-                FirstName = Console.ReadLine(),
-                LastName = Console.ReadLine(),
-                Address = Console.ReadLine(),
-                City = Console.ReadLine(),
-                State = Console.ReadLine(),
-                Zip = Convert.ToInt64(Console.ReadLine()),
-                PhoneNumber = Console.ReadLine(),
-                Email = Console.ReadLine(),
-            };
-            Console.WriteLine("Contact Details:" + "\n" + "FirstName: " + contact.FirstName + "\n" + "LastName: " + contact.LastName + "\n" + "Address: " + contact.Address + "\n" + "City: " + contact.City + "\n" + "State: " + contact.State + "\n" + "Zip: " + contact.Zip + "\n" + "PhoneNumber: " + contact.PhoneNumber + "\n" + "Email: " + contact.Email);
+                Console.WriteLine("Select 1.To Create Contact  2.Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        create.CreateContact();
+                        break;
+                    case 2:
+                        flag = false;
+                        break;
 
+                }
+            }
         }
     }
 }
